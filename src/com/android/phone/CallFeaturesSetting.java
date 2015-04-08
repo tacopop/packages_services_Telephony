@@ -21,6 +21,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -681,7 +682,6 @@ public class CallFeaturesSetting extends PreferenceActivity
             int index = mCallRecordingFormat.findIndexOfValue((String) objValue);
             Settings.System.putInt(mPhone.getContext().getContentResolver(), Settings.System.CALL_RECORDING_FORMAT, value);
             mCallRecordingFormat.setSummary(mCallRecordingFormat.getEntries()[index]);
-         }
         } else if (preference == mProxSpeakerDelay) {
             int delay = Integer.valueOf((String) objValue);
             Settings.System.putInt(getContentResolver(),
